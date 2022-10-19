@@ -9,7 +9,7 @@
               <div class="flex w-full items-center justify-between md:w-auto">
                 <a href="#">
                   <span class="sr-only">Your Company</span>
-                  <img class="h-8 w-auto sm:h-10" src="/images/logo-white.svg" alt="" />
+                  <img draggable="false" class="h-8 w-auto sm:h-10" src="/images/logo-white.svg" alt="" />
                 </a>
                 <div class="-mr-2 flex items-center md:hidden">
                   <PopoverButton class="inline-flex items-center justify-center rounded-md bg-[#0D806E] p-2 text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -35,7 +35,7 @@
             <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
               <div class="flex items-center justify-between px-5 pt-4">
                 <div>
-                  <img class="h-8 w-auto" src="/images/logo-colorful.svg" alt="" />
+                  <img draggable="false" class="h-8 w-auto" src="/images/logo-colorful.svg" alt="" />
                 </div>
                 <div class="-mr-2">
                   <PopoverButton class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -64,7 +64,7 @@
                 <span class="block font-bold">novos profissionais.</span>
               </div>
               <div class="block md:hidden">
-                <img src="/images/hero.svg" alt="">
+                <img draggable="false" src="/images/hero.svg" alt="">
               </div>
               <div class="mt-5 max-w-md sm:flex justify-center md:justify-start md:mt-8">
                 <div class="rounded-md shadow">
@@ -76,7 +76,7 @@
               </div>
             </div>
             <div class="hidden md:block flex-1">
-              <img src="/images/hero.svg" alt="">
+              <img draggable="false" src="/images/hero.svg" alt="">
             </div>
           </div>
         </section>
