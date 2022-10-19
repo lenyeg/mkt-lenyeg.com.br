@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden bg-gray-50">
+  <div class="relative overflow-hidden bg-[#0D806E]">
 
     <div class="relative pt-6 pb-16 sm:pb-24">
       <Popover>
@@ -9,10 +9,10 @@
               <div class="flex w-full items-center justify-between md:w-auto">
                 <a href="#">
                   <span class="sr-only">Your Company</span>
-                  <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                  <img class="h-8 w-auto sm:h-10" src="/images/logo-white.svg" alt="" />
                 </a>
                 <div class="-mr-2 flex items-center md:hidden">
-                  <PopoverButton class="inline-flex items-center justify-center rounded-md bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <PopoverButton class="inline-flex items-center justify-center rounded-md bg-[#0D806E] p-2 text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     <span class="sr-only">Open main menu</span>
                     <Bars3Icon class="h-6 w-6" aria-hidden="true" />
                   </PopoverButton>
@@ -35,7 +35,7 @@
             <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
               <div class="flex items-center justify-between px-5 pt-4">
                 <div>
-                  <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                  <img class="h-8 w-auto" src="/images/logo-colorful.svg" alt="" />
                 </div>
                 <div class="-mr-2">
                   <PopoverButton class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -57,7 +57,7 @@
         <section class="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">
           <div class="flex flex-col md:flex-row">
             <div class="text-center md:text-left flex-1">
-              <div class="text-4xl tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              <div class="text-4xl tracking-tight text-white sm:text-5xl md:text-6xl">
                 <span class="block">Desenvolvemos</span>
                 <span class="block font-bold">produtos digitais,</span>
                 <span class="block">enquanto capacitamos</span>
@@ -90,9 +90,7 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Quem somos?', href: '#' },
+  { name: 'Como funciona?', href: '#' },
 ]
 </script>
