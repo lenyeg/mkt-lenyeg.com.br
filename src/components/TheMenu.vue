@@ -1,9 +1,10 @@
 <template>
   <div class="relative overflow-hidden bg-[#0D806E]">
 
-    <div class="relative pt-6 pb-16 sm:pb-24">
+    <section class="container mx-auto">
+      <div class="relative pt-6 pb-16 sm:pb-24">
       <Popover>
-        <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="mx-auto px-4 sm:px-6">
           <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
             <div class="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
               <div class="flex w-full items-center justify-between md:w-auto">
@@ -53,8 +54,8 @@
         </transition>
       </Popover>
 
-      <BaseContainer>
-        <section class="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">
+      <section class="container mx-auto">
+        <section class="mx-auto mt-16 px-4 sm:mt-24">
           <div class="flex flex-col md:flex-row">
             <div class="text-center md:text-left flex-1">
               <div class="text-4xl tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -80,8 +81,9 @@
             </div>
           </div>
         </section>
-      </BaseContainer>
+      </section>
     </div>
+    </section>
   </div>
 </template>
 
