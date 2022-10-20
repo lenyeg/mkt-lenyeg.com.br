@@ -15,8 +15,8 @@ import BaseContainer from '../components/BaseContainer.astro';
 		<TheMenu client:only="vue"/>
 		<BaseContainer>
 			<section class="flex flex-col gap-10 mb-16">
-				<section class="flex flex-col gap-12 items-start text-center lg:text-left lg:flex-row mt-16">
-					<section class="flex flex-col justify-center items-center gap-6 flex-1 lg:text-2xl md:items-start">
+				<section id="about" class="flex flex-col gap-12 items-start text-center lg:text-left lg:flex-row mt-16">
+					<section  class="flex flex-col justify-center items-center gap-6 flex-1 lg:text-2xl md:items-start">
 						<h2 class="text-3xl sm:text-5xl font-bold text-gray-700">Quem somos?</h2>
 						<span class="text-gray-500">
 							Uma escola. Nosso objetivo é aprender! Acontece que muito só se aprende com experiência na vida real, e é isso que promovemos diariamente.
@@ -31,7 +31,7 @@ import BaseContainer from '../components/BaseContainer.astro';
 						<img draggable="false" src="/images/imagem-equipe.png" width="475" alt="A equipe" class="w-full">
 					</section>
 				</section>
-				<section class="flex flex-col gap-12 items-start text-center md:text-left lg:flex-row-reverse mt-16">
+				<section id="how" class="flex flex-col gap-12 items-start text-center md:text-left lg:flex-row-reverse mt-16">
 					<section class="flex flex-col justify-center items-center md:items-start gap-6 flex-1 lg:text-2xl">
 						<h2 class="text-3xl md:text-5xl font-bold text-gray-700">Como funciona?</h2>
 						<span class="text-gray-500">
@@ -90,11 +90,11 @@ import BaseContainer from '../components/BaseContainer.astro';
 				<div class="flex justify-between lg:flex-row-reverse">
 					<div class="flex flex-col gap-6 lg:flex-row">
 						<a
-							href="/#about-us"
+							href="/#about"
 							class="relative font-medium text-white before:content-[''] before:absolute before:bottom-0 before:w-full before:origin-center before:scale-x-0 before:hover:scale-x-100 before:h-[2px] before:bg-[#0D806E] hover:before: before:duration-300"
 						>Como funciona?</a>
 						<a
-							href="/#price"
+							href="/#how"
 							class="relative font-medium text-white before:content-[''] before:absolute before:bottom-0 before:w-full before:origin-center before:scale-x-0 before:hover:scale-x-100 before:h-[2px] before:bg-[#0D806E] hover:before: before:duration-300"
 						>Quem somos?</a>
 					</div>
@@ -142,3 +142,9 @@ import BaseContainer from '../components/BaseContainer.astro';
 		</footer>
 	</body>
 </html>
+
+<style>
+	:root {
+		scroll-behavior: smooth;
+	}
+</style>

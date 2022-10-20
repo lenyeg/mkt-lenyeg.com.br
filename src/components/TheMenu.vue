@@ -5,8 +5,8 @@
       <div class="relative pt-6 pb-16 sm:pb-24">
       <Popover>
         <div class="mx-auto px-4 sm:px-6">
-          <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
-            <div class="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
+          <nav class="relative flex items-center justify-between sm:h-10" aria-label="Global">
+            <div class="flex flex-1 items-center md:inset-y-0">
               <div class="flex w-full items-center justify-between md:w-auto">
                 <a href="#">
                   <span class="sr-only">Lenyeg</span>
@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="hidden md:flex md:space-x-10">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" class="font-medium text-gray-500 hover:text-gray-900">{{ item.name }}</a>
+              <a v-for="item in navigation" :key="item.name" :href="item.href" class="relative font-medium text-white before:content-[''] before:absolute before:bottom-0 before:w-full before:origin-center before:scale-x-0 before:hover:scale-x-100 before:h-[2px] before:bg-white hover:before: before:duration-300">{{ item.name }}</a>
             </div>
           </nav>
         </div>
@@ -86,7 +86,7 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  { name: 'Quem somos?', href: '#' },
-  { name: 'Como funciona?', href: '#' },
+  { name: 'Quem somos?', href: '/#about' },
+  { name: 'Como funciona?', href: '/#how' },
 ]
 </script>
