@@ -7,4 +7,9 @@ import vue from "@astrojs/vue";
 export default defineConfig({
   // ...
   integrations: [tailwind(), sitemap(), vue()],
+  vite: {
+    ssr: {
+      external: ["svgo"],
+    },
+  },
 });

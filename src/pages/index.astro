@@ -1,150 +1,268 @@
 ---
-import TheMenu from '../components/TheMenu.vue'
-import BaseContainer from '../components/BaseContainer.astro';
+import Layout from "../layouts/Layout.astro";
+
+import TheMenu from "../components/TheMenu.vue";
+import Icon from "astro-icon";
+import BaseContainer from "../components/BaseContainer.astro";
 ---
 
-<html lang="pt-br">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Lenyeg</title>
-	</head>
-	<body>
-		<TheMenu client:only="vue"/>
-		<BaseContainer>
-			<section class="flex flex-col gap-10 mb-16">
-				<section id="about" class="flex flex-col gap-12 items-start text-center lg:text-left lg:flex-row mt-16">
-					<section  class="flex flex-col justify-center items-center gap-6 flex-1 lg:text-2xl md:items-start">
-						<h2 class="text-3xl sm:text-5xl font-bold text-gray-700">Quem somos?</h2>
-						<span class="text-gray-500">
-							Uma escola. Nosso objetivo é aprender! Acontece que muito só se aprende com experiência na vida real, e é isso que promovemos diariamente.
-						</span>
-						<span class="text-gray-500">
-							Aqui os próximos profissionais de alta performance tem o espaço para encontrarem o seu caminho dentro do marcado de tecnologia.
-						</span>
-						<img draggable="false" draggable="false" src="/images/imagem-equipe.png" width="330" alt="A equipe" class="block md:hidden">
-						<a href="" class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300">Junte-se a nós!</a>
-					</section>
-					<section draggable="false" class="md:flex items-center justify-center flex-1 hidden">
-						<img draggable="false" src="/images/imagem-equipe.png" width="475" alt="A equipe" class="w-full">
-					</section>
-				</section>
-				<section id="how" class="flex flex-col gap-12 items-start text-center md:text-left lg:flex-row-reverse mt-16">
-					<section class="flex flex-col justify-center items-center md:items-start gap-6 flex-1 lg:text-2xl">
-						<h2 class="text-3xl md:text-5xl font-bold text-gray-700">Como funciona?</h2>
-						<span class="text-gray-500">
-							Acolhemos pessoas baseado em seus valores e as desenvolvemos de acordo com a demanda do projeto.
-						</span>
-						<span class="text-gray-500">
-							Utilizamos as atividades dos alunos como entregáveis do seu produto, assim, desenvolvemos novos profissionais para o mercado de tecnologia enquanto desenvolvemos seu produto digital.
-						</span>
-						<span class="text-gray-500">
-							Assim, quando o seu produto estiver pronto, teremos uma nova turma de novos profissionais disponíveis a você.
-						</span>
-						<img draggable="false" src="/images/how-it-works.svg" width="476" alt="" class="block md:hidden">
-						<a href="" class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300">Comece agora</a>
-					</section>
-					<section class="hidden md:flex items-center justify-center flex-1">
-						<img draggable="false" src="/images/how-it-works.svg" width="600" alt="">
-					</section>
-				</section>
-				<section class="flex flex-col gap-12 items-start text-center md:text-left lg:flex-row mt-16">
-					<section class="flex flex-col justify-center items-center md:items-start gap-6 flex-1 lg:text-2xl">
-						<h2 class="text-3xl md:text-5xl font-bold text-gray-700">Faça como eles</h2>
-						<span class="text-gray-500">
-							Nossos clientes estão preocupados com a escasse de profissionais no mercado de tecnologia e aproveitaram para tirar seus projetos do papel.
-						</span>
-						<span class="text-gray-500">
-							Invista hoje para garatir nossos profissionais do futuro.
-						</span>
-						<section class="flex flex-col items-center justify-center gap-4 flex-1 p-2 md:hidden">
-							<img draggable="false" src="/images/pvai-app-portfolio.png" width="600" alt="" class="rounded">
-							<div class="flex justify-around items-center gap-2">
-								<img draggable="false" src="/images/pvai-app-portfolio.png" width="114" alt="" class="rounded">
-								<img draggable="false" src="/images/osmarjr-portfolio.png" width="114" alt="" class="rounded">
-								<img draggable="false" src="/images/ieasy-portfolio.png" width="114" alt="" class="rounded">
-							</div>
-						</section>
-						<a href="" class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300 flex justify-center items-center gap-2">
-							Fale conosco
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19" class="w-4 h-4 md:w-6 md:h-6">
-								<path fill="#fff" d="M15.807 3.112A8.835 8.835 0 0 0 9.499.495C4.586.495.582 4.498.578 9.412a8.95 8.95 0 0 0 1.189 4.46L.506 18.495l4.73-1.24a8.925 8.925 0 0 0 4.263 1.086h.005c4.914 0 8.916-4.003 8.92-8.921a8.885 8.885 0 0 0-2.618-6.308Zm-6.308 13.72a7.394 7.394 0 0 1-3.775-1.036l-.27-.162-2.806.736.75-2.737-.176-.282a7.38 7.38 0 0 1-1.133-3.944C2.089 5.328 5.415 2 9.504 2a7.38 7.38 0 0 1 5.242 2.173 7.376 7.376 0 0 1 2.17 5.242c-.005 4.094-3.332 7.416-7.417 7.416Zm4.067-5.552c-.222-.11-1.316-.65-1.522-.726-.205-.073-.355-.112-.5.111-.15.222-.578.727-.706.872-.128.15-.261.166-.484.056-.221-.112-.94-.346-1.79-1.108-.665-.59-1.109-1.322-1.242-1.543-.128-.223-.012-.342.1-.454.097-.099.22-.26.332-.389.113-.128.15-.223.223-.371.073-.151.038-.28-.017-.39-.056-.112-.5-1.211-.688-1.654-.18-.438-.364-.377-.501-.383-.128-.008-.278-.008-.428-.008a.82.82 0 0 0-.595.278c-.204.223-.777.762-.777 1.86 0 1.1.799 2.156.911 2.306.11.15 1.568 2.399 3.806 3.366.529.23.945.367 1.27.47.535.171 1.017.145 1.402.09.427-.065 1.317-.54 1.505-1.06.185-.523.185-.968.128-1.062-.055-.094-.204-.15-.427-.26Z"/>
-							</svg>
-						</a>
-					</section>
-					<section class="hidden md:flex flex-col items-center justify-center gap-4 flex-1 p-2">
-						<img draggable="false" src="/images/pvai-app-portfolio.png" width="620" alt="" class="rounded">
-						<div class="flex justify-around items-center gap-2">
-							<img draggable="false" src="/images/pvai-app-portfolio.png" width="200" alt="" class="rounded">
-							<img draggable="false" src="/images/osmarjr-portfolio.png" width="200" alt="" class="rounded">
-							<img draggable="false" src="/images/ieasy-portfolio.png" width="200" alt="" class="rounded">
-						</div>
-					</section>
-				</section>
-			</section>
-		</BaseContainer>
-		<footer class="py-4 text-white bg-gray-700 lg:pt-20">
-			<BaseContainer>
-				<div class="flex justify-between lg:flex-row-reverse">
-					<div class="flex flex-col gap-6 lg:flex-row">
-						<a
-							href="/#about"
-							class="relative font-medium text-white before:content-[''] before:absolute before:bottom-0 before:w-full before:origin-center before:scale-x-0 before:hover:scale-x-100 before:h-[2px] before:bg-[#0D806E] hover:before: before:duration-300"
-						>Como funciona?</a>
-						<a
-							href="/#how"
-							class="relative font-medium text-white before:content-[''] before:absolute before:bottom-0 before:w-full before:origin-center before:scale-x-0 before:hover:scale-x-100 before:h-[2px] before:bg-[#0D806E] hover:before: before:duration-300"
-						>Quem somos?</a>
-					</div>
-					<div class="flex flex-col gap-3 lg:flex-row lg:gap-6">
-						<a
-							href="https://www.facebook.com/paranavaiapp/"
-							target="_blank"
-						>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 49 49" class="h-8 w-8 group">
-								<path fill="#fff" class="group-hover:fill-[#0D806E] duration-300" d="M40.5 24.593c0-8.89-7.163-16.098-15.998-16.098-8.839.002-16.002 7.207-16.002 16.1 0 8.033 5.851 14.692 13.498 15.9V29.247h-4.06v-4.652h4.064v-3.55c0-4.033 2.39-6.26 6.044-6.26 1.751 0 3.581.313 3.581.313v3.96H29.61c-1.985 0-2.605 1.242-2.605 2.515v3.02h4.435l-.708 4.651h-3.73v11.25c7.648-1.209 13.499-7.868 13.499-15.9Z"/>
-							</svg>
-						</a>
-						<a
-							href="https://www.instagram.com/paranavai.app/"
-							target="_blank"
-						>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 49 49" class="h-8 w-8 group">
-								<path fill="#fff" class="group-hover:fill-[#0D806E] duration-300" d="M24.5 8.495c-4.342 0-4.888.02-6.594.096-1.706.08-2.868.348-3.886.744a7.835 7.835 0 0 0-2.834 1.846 7.855 7.855 0 0 0-1.846 2.834c-.396 1.016-.666 2.18-.744 3.88-.076 1.71-.096 2.254-.096 6.602 0 4.344.02 4.888.096 6.594.08 1.704.348 2.866.744 3.884a7.858 7.858 0 0 0 1.846 2.834 7.808 7.808 0 0 0 2.832 1.846c1.02.396 2.18.666 3.884.744 1.708.076 2.252.096 6.598.096s4.888-.02 6.596-.096c1.702-.08 2.868-.348 3.886-.744a7.831 7.831 0 0 0 2.832-1.846 7.858 7.858 0 0 0 1.846-2.834c.394-1.018.664-2.18.744-3.884.076-1.706.096-2.25.096-6.596s-.02-4.89-.096-6.598c-.08-1.702-.35-2.866-.744-3.882a7.853 7.853 0 0 0-1.846-2.834 7.822 7.822 0 0 0-2.834-1.846c-1.02-.396-2.184-.666-3.886-.744-1.708-.076-2.25-.096-6.598-.096h.006-.002Zm-1.434 2.884h1.436c4.272 0 4.778.014 6.464.092 1.56.07 2.408.332 2.972.55.746.29 1.28.638 1.84 1.198.56.56.906 1.092 1.196 1.84.22.562.48 1.41.55 2.97.078 1.686.094 2.192.094 6.462s-.016 4.778-.094 6.464c-.07 1.56-.332 2.406-.55 2.97a4.94 4.94 0 0 1-1.198 1.838c-.56.56-1.092.906-1.84 1.196-.56.22-1.408.48-2.97.552-1.686.076-2.192.094-6.464.094s-4.78-.018-6.466-.094c-1.56-.072-2.406-.332-2.97-.552a4.955 4.955 0 0 1-1.84-1.196 4.96 4.96 0 0 1-1.2-1.84c-.218-.562-.48-1.41-.55-2.97-.076-1.686-.092-2.192-.092-6.466 0-4.272.016-4.776.092-6.462.072-1.56.332-2.408.552-2.972.29-.746.638-1.28 1.198-1.84a4.943 4.943 0 0 1 1.84-1.196c.564-.22 1.41-.48 2.97-.552 1.476-.068 2.048-.088 5.03-.09v.004Zm9.976 2.656a1.92 1.92 0 1 0 0 3.841 1.92 1.92 0 0 0 0-3.84Zm-8.54 2.244a8.218 8.218 0 1 0-.256 16.434 8.218 8.218 0 0 0 .256-16.434Zm0 2.882a5.334 5.334 0 1 1 0 10.668 5.334 5.334 0 0 1 0-10.668Z"/>
-							</svg>
-						</a>
-						<a
-							href="https://api.whatsapp.com/send?phone=5544920018161&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20maximizar%20os%20resultados%20do%20meu%20neg%C3%B3cio!"
-							target="_blank"
-							><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 49 49" class="h-8 w-8 group">
-								<path fill="#fff" class="group-hover:fill-[#0D806E] duration-300" d="M35.825 13.147a15.784 15.784 0 0 0-5.163-3.453 15.841 15.841 0 0 0-6.102-1.199c-8.773 0-15.923 7.116-15.931 15.852 0 2.798.735 5.52 2.123 7.93L8.5 40.495l8.446-2.204a15.995 15.995 0 0 0 7.614 1.93h.008c8.776 0 15.924-7.116 15.932-15.86a15.735 15.735 0 0 0-1.213-6.072 15.79 15.79 0 0 0-3.464-5.142h.002ZM24.56 37.537a13.25 13.25 0 0 1-6.742-1.84l-.482-.288-5.01 1.308 1.337-4.866-.313-.502a13.077 13.077 0 0 1-2.023-7.01c0-7.252 5.94-13.168 13.241-13.168 1.74-.003 3.462.337 5.07 1a13.182 13.182 0 0 1 4.292 2.862 13.11 13.11 0 0 1 2.873 4.275 13.064 13.064 0 0 1 1 5.045c-.007 7.278-5.948 13.184-13.243 13.184Zm7.263-9.868c-.396-.198-2.35-1.156-2.718-1.292-.366-.13-.633-.198-.894.198-.267.394-1.03 1.292-1.26 1.55-.229.266-.466.296-.864.1-.396-.2-1.68-.616-3.198-1.97-1.186-1.05-1.98-2.35-2.216-2.744-.23-.396-.022-.608.177-.806.174-.176.395-.464.594-.692.201-.228.267-.396.398-.66.13-.268.068-.496-.03-.694-.1-.198-.894-2.152-1.23-2.94-.321-.778-.649-.67-.894-.68-.229-.014-.496-.014-.763-.014a1.468 1.468 0 0 0-1.063.494c-.365.396-1.388 1.354-1.388 3.308 0 1.954 1.426 3.832 1.627 4.098.197.266 2.8 4.264 6.797 5.984.944.41 1.687.652 2.268.836.954.304 1.816.258 2.503.16.764-.116 2.353-.96 2.688-1.886.33-.928.33-1.72.23-1.886-.1-.168-.366-.266-.764-.464Z"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-				<div
-					class="flex flex-col items-center justify-center w-10/12 pb-8 m-auto my-4 text-center border-b-2 border-gray-800 border-solid lg:flex-row lg:justify-between lg:w-full"
-				>
-					<div class="my-4 text-center text-gray-200 lg:text-start">
-						<p>2022 &copy; Lenyeg Ltda. Todos os direitos reservados.</p>
-						<p>CNPJ: 23.018.045/0001-99</p>
-					</div>
-					<a href="/" >
-						<img draggable="false" src="/images/logo-white.svg" width="250" alt="" class="w-60">
-					</a>
-				</div>
-				<p class="text-center lg:my-4 lg:mt-8">
-					Feito com 💚 e ☕️ pela Lenyeg
-				</p>
-			</BaseContainer>
-		</footer>
-	</body>
-</html>
+<Layout title="Lenyeg">
+  <TheMenu client:only="vue" />
+  <BaseContainer>
+    <section class="flex flex-col gap-10 mb-16">
+      <section
+        id="about"
+        class="flex flex-col gap-12 items-start text-center lg:text-left lg:flex-row mt-16"
+      >
+        <section
+          class="flex flex-col justify-center items-center gap-6 flex-1 lg:text-2xl md:items-start"
+        >
+          <h2 class="text-3xl sm:text-5xl font-bold text-gray-700">
+            Quem somos?
+          </h2>
+          <span class="text-gray-500">
+            Uma escola. Nosso objetivo é aprender! Acontece que muito só se
+            aprende com experiência na vida real, e é isso que promovemos
+            diariamente.
+          </span>
+          <span class="text-gray-500">
+            Aqui os próximos profissionais de alta performance tem o espaço para
+            encontrarem o seu caminho dentro do marcado de tecnologia.
+          </span>
+          <img
+            draggable="false"
+            draggable="false"
+            src="/images/imagem-equipe.png"
+            width="330"
+            alt="A equipe"
+            class="block md:hidden"
+          />
+          <a
+            href=""
+            class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300"
+            >Junte-se a nós!</a
+          >
+        </section>
+        <section
+          draggable="false"
+          class="md:flex items-center justify-center flex-1 hidden"
+        >
+          <img
+            draggable="false"
+            src="/images/imagem-equipe.png"
+            width="475"
+            alt="A equipe"
+            class="w-full"
+          />
+        </section>
+      </section>
+      <section
+        id="how"
+        class="flex flex-col gap-12 items-start text-center md:text-left lg:flex-row-reverse mt-16"
+      >
+        <section
+          class="flex flex-col justify-center items-center md:items-start gap-6 flex-1 lg:text-2xl"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-700">
+            Como funciona?
+          </h2>
+          <span class="text-gray-500">
+            Acolhemos pessoas baseado em seus valores e as desenvolvemos de
+            acordo com a demanda do projeto.
+          </span>
+          <span class="text-gray-500">
+            Utilizamos as atividades dos alunos como entregáveis do seu produto,
+            assim, desenvolvemos novos profissionais para o mercado de
+            tecnologia enquanto desenvolvemos seu produto digital.
+          </span>
+          <span class="text-gray-500">
+            Assim, quando o seu produto estiver pronto, teremos uma nova turma
+            de novos profissionais disponíveis a você.
+          </span>
+          <img
+            draggable="false"
+            src="/images/how-it-works.svg"
+            width="476"
+            alt=""
+            class="block md:hidden"
+          />
+          <a
+            href=""
+            class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300"
+            >Comece agora</a
+          >
+        </section>
+        <section class="hidden md:flex items-center justify-center flex-1">
+          <img
+            draggable="false"
+            src="/images/how-it-works.svg"
+            width="600"
+            alt=""
+          />
+        </section>
+      </section>
+      <section
+        class="flex flex-col gap-12 items-start text-center md:text-left lg:flex-row mt-16"
+      >
+        <section
+          class="flex flex-col justify-center items-center md:items-start gap-6 flex-1 lg:text-2xl"
+        >
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-700">
+            Faça como eles
+          </h2>
+          <span class="text-gray-500">
+            Nossos clientes estão preocupados com a escasse de profissionais no
+            mercado de tecnologia e aproveitaram para tirar seus projetos do
+            papel.
+          </span>
+          <span class="text-gray-500">
+            Invista hoje para garatir nossos profissionais do futuro.
+          </span>
+          <section
+            class="flex flex-col items-center justify-center gap-4 flex-1 p-2 md:hidden"
+          >
+            <img
+              draggable="false"
+              src="/images/pvai-app-portfolio.png"
+              width="600"
+              alt=""
+              class="rounded"
+            />
+            <div class="flex justify-around items-center gap-2">
+              <img
+                draggable="false"
+                src="/images/pvai-app-portfolio.png"
+                width="114"
+                alt=""
+                class="rounded"
+              />
+              <img
+                draggable="false"
+                src="/images/osmarjr-portfolio.png"
+                width="114"
+                alt=""
+                class="rounded"
+              />
+              <img
+                draggable="false"
+                src="/images/ieasy-portfolio.png"
+                width="114"
+                alt=""
+                class="rounded"
+              />
+            </div>
+          </section>
+          <a
+            href=""
+            class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300 flex justify-center items-center gap-2"
+          >
+            Fale conosco
+            <Icon name="wpp" class="w-4 h-4 md:w-6 md:h-6" />
+          </a>
+        </section>
+        <section
+          class="hidden md:flex flex-col items-center justify-center gap-4 flex-1 p-2"
+        >
+          <img
+            draggable="false"
+            src="/images/pvai-app-portfolio.png"
+            width="620"
+            alt=""
+            class="rounded"
+          />
+          <div class="flex justify-around items-center gap-2">
+            <img
+              draggable="false"
+              src="/images/pvai-app-portfolio.png"
+              width="200"
+              alt=""
+              class="rounded"
+            />
+            <img
+              draggable="false"
+              src="/images/osmarjr-portfolio.png"
+              width="200"
+              alt=""
+              class="rounded"
+            />
+            <img
+              draggable="false"
+              src="/images/ieasy-portfolio.png"
+              width="200"
+              alt=""
+              class="rounded"
+            />
+          </div>
+        </section>
+      </section>
+    </section>
+  </BaseContainer>
+  <footer class="py-4 text-white bg-gray-700 lg:pt-20">
+    <BaseContainer>
+      <div class="flex justify-between lg:flex-row-reverse">
+        <div class="flex flex-col gap-6 lg:flex-row">
+          <a
+            href="/#about"
+            class="relative font-medium text-white before:content-[''] before:absolute before:bottom-0 before:w-full before:origin-center before:scale-x-0 before:hover:scale-x-100 before:h-[2px] before:bg-[#0D806E] hover:before: before:duration-300"
+            >Como funciona?</a
+          >
+          <a
+            href="/#how"
+            class="relative font-medium text-white before:content-[''] before:absolute before:bottom-0 before:w-full before:origin-center before:scale-x-0 before:hover:scale-x-100 before:h-[2px] before:bg-[#0D806E] hover:before: before:duration-300"
+            >Quem somos?</a
+          >
+        </div>
+        <div class="flex flex-col gap-3 lg:flex-row lg:gap-6">
+          <a href="https://www.facebook.com/paranavai.app/" target="_blank">
+            <Icon
+              name="facebook"
+              size="32"
+              class="text-white hover:text-[#0D806E] duration-300"
+            />
+          </a>
+          <a href="https://www.instagram.com/paranavai.app/" target="_blank">
+            <Icon
+              name="instagram"
+              size="32"
+              class="text-white hover:text-[#0D806E] duration-300"
+            />
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=5544920018161&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20maximizar%20os%20resultados%20do%20meu%20neg%C3%B3cio!"
+            target="_blank"
+          >
+            <Icon
+              name="whats"
+              size="32"
+              class="text-white hover:text-[#0D806E] duration-300"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center w-10/12 pb-8 m-auto my-4 text-center border-b-2 border-gray-800 border-solid lg:flex-row lg:justify-between lg:w-full"
+      >
+        <div class="my-4 text-center text-gray-200 lg:text-start">
+          <p>2022 &copy; Lenyeg Ltda. Todos os direitos reservados.</p>
+          <p>CNPJ: 23.018.045/0001-99</p>
+        </div>
+        <a href="/">
+          <img
+            draggable="false"
+            src="/images/logo-white.svg"
+            width="250"
+            alt=""
+            class="w-60"
+          />
+        </a>
+      </div>
+      <p class="text-center lg:my-4 lg:mt-8">Feito com 💚 e ☕️ pela Lenyeg</p>
+    </BaseContainer>
+  </footer>
+</Layout>
 
 <style>
-	:root {
-		scroll-behavior: smooth;
-	}
+  :root {
+    scroll-behavior: smooth;
+  }
 </style>
