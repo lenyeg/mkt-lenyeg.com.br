@@ -63,10 +63,10 @@
               </div>
               <div class="mt-5 flex flex-col justify-center items-center md:justify-start gap-3 md:flex-row md:mt-8">
                 <div class="rounded-md w-fit">
-                  <a href="#" class="m-1 flex  items-center justify-center rounded-full border-4 border-solid border-transparent bg-white px-8 py-3 text-base font-medium text-gray-700 md:py-4 md:text-lg shadow hover:border-gray-300 duration-300">Comece agora</a>
+                  <a href="/#how" class="m-1 flex  items-center justify-center rounded-full border-4 border-solid border-transparent bg-white px-8 py-3 text-base font-medium text-gray-700 md:py-4 md:text-lg shadow hover:border-gray-300 duration-300">Comece agora</a>
                 </div>
                 <div class="rounded-md w-fit">
-                  <a href="#" class="m-1 flex  items-center justify-center rounded-full border border-solid border-white text-white px-8 py-3 text-base font-medium md:py-4 md:text-lg shadow hover:bg-white hover:text-gray-700 duration-300">Saiba mais</a>
+                  <a href="/#about" class="m-1 flex  items-center justify-center rounded-full border border-solid border-white text-white px-8 py-3 text-base font-medium md:py-4 md:text-lg shadow hover:bg-white hover:text-gray-700 duration-300">Saiba mais</a>
                 </div>
               </div>
             </div>
