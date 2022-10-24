@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import TheMenu from "../components/TheMenu.vue";
 import Icon from "astro-icon";
 import BaseContainer from "../components/BaseContainer.astro";
+import TheSelector from "../components/TheSelector.vue";
 ---
 
 <Layout title="Lenyeg">
@@ -118,40 +119,6 @@ import BaseContainer from "../components/BaseContainer.astro";
           <span class="text-gray-500">
             Invista hoje para garatir nossos profissionais do futuro.
           </span>
-          <section
-            class="flex flex-col items-center justify-center gap-4 flex-1 p-2 md:hidden"
-          >
-            <img
-              draggable="false"
-              src="/images/pvai-app-portfolio.png"
-              width="600"
-              alt=""
-              class="rounded"
-            />
-            <div class="flex justify-around items-center gap-2">
-              <img
-                draggable="false"
-                src="/images/pvai-app-portfolio.png"
-                width="114"
-                alt=""
-                class="rounded"
-              />
-              <img
-                draggable="false"
-                src="/images/osmarjr-portfolio.png"
-                width="114"
-                alt=""
-                class="rounded"
-              />
-              <img
-                draggable="false"
-                src="/images/ieasy-portfolio.png"
-                width="114"
-                alt=""
-                class="rounded"
-              />
-            </div>
-          </section>
           <a
             href=""
             class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300 flex justify-center items-center gap-2"
@@ -160,40 +127,7 @@ import BaseContainer from "../components/BaseContainer.astro";
             <Icon name="wpp" class="w-4 h-4 md:w-6 md:h-6" />
           </a>
         </section>
-        <section
-          class="hidden md:flex flex-col items-center justify-center gap-4 flex-1 p-2"
-        >
-          <img
-            draggable="false"
-            src="/images/pvai-app-portfolio.png"
-            width="620"
-            alt=""
-            class="rounded"
-          />
-          <div class="flex justify-around items-center gap-2">
-            <img
-              draggable="false"
-              src="/images/pvai-app-portfolio.png"
-              width="200"
-              alt=""
-              class="rounded"
-            />
-            <img
-              draggable="false"
-              src="/images/osmarjr-portfolio.png"
-              width="200"
-              alt=""
-              class="rounded"
-            />
-            <img
-              draggable="false"
-              src="/images/ieasy-portfolio.png"
-              width="200"
-              alt=""
-              class="rounded"
-            />
-          </div>
-        </section>
+        <TheSelector client:only="vue" />
       </section>
     </section>
   </BaseContainer>
