@@ -38,9 +38,7 @@ import TheSelector from "../components/TheSelector.vue";
             alt="A equipe"
             class="block md:hidden"
           />
-          <a
-            href="https://discord.gg/J6f68NQC" target="_blank"
-            class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300"
+          <a href="https://discord.gg/J6f68NQC" target="_blank" class="button"
             >Junte-se a nós!</a
           >
         </section>
@@ -90,8 +88,7 @@ import TheSelector from "../components/TheSelector.vue";
           <a
             href="https://wa.me/554491441919?text=ol%C3%A1,%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20ser%20atendido"
             target="_blank"
-            class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300"
-            >Comece agora</a
+            class="button">Comece agora</a
           >
         </section>
         <section class="hidden md:flex items-center justify-center flex-1">
@@ -121,16 +118,24 @@ import TheSelector from "../components/TheSelector.vue";
             Invista hoje para garatir nossos profissionais do futuro.
           </span>
           <section class="flex flex-col gap-4 flex-1 p-2 md:hidden">
-            <img src="/images/pvai-app-portfolio.png" alt="" class="rounded">
+            <img src="/images/pvai-app-portfolio.png" alt="" class="rounded" />
             <div class="flex justify-around items-center gap-2">
-              <img src="/images/osmarjr-portfolio.png" alt="" class="rounded flex-1 w-36 cursor-pointer">
-              <img src="/images/ieasy-portfolio.png" alt="" class="rounded flex-1 w-36 cursor-pointer">
+              <img
+                src="/images/osmarjr-portfolio.png"
+                alt=""
+                class="rounded flex-1 w-36 cursor-pointer"
+              />
+              <img
+                src="/images/ieasy-portfolio.png"
+                alt=""
+                class="rounded flex-1 w-36 cursor-pointer"
+              />
             </div>
           </section>
           <a
             href="https://wa.me/554491441919?text=ol%C3%A1,%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20ser%20atendido"
             target="_blank"
-            class="px-8 py-3 bg-[#0D806E] border-4 border-transparent text-white rounded-full shadow hover:border-gray-300 duration-300 flex justify-center items-center gap-2"
+            class="button"
           >
             Fale conosco
             <Icon name="wpp" class="w-4 h-4 md:w-6 md:h-6" />
@@ -197,5 +202,9 @@ import TheSelector from "../components/TheSelector.vue";
 <style>
   :root {
     scroll-behavior: smooth;
+  }
+
+  .button {
+    @apply relative px-8 py-3 bg-[#0D806E] text-white rounded-full shadow duration-300 flex justify-center items-center gap-2 before:absolute before:bg-[#0D806E] before:left-[-4px] before:top-[-4px] before:right-[-4px] before:bottom-[-4px] before:rounded-full before:opacity-0 hover:before:opacity-60 before:duration-300 before:-z-10;
   }
 </style>
