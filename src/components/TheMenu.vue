@@ -96,7 +96,7 @@
 
 <script lang="ts" setup>
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline/index.js";
 
 const navigation = [
   { name: "Quem somos?", href: "/#about" },
