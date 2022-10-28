@@ -5,6 +5,7 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://lenyeg.com.br',
   // ...
   integrations: [tailwind(), sitemap(), vue()],
   vite: {

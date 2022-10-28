@@ -1,26 +1,78 @@
 ---
+import { Sprite } from "astro-icon";
+
 export interface Props {
-	title: string;
+  title: string;
+  description?: string;
 }
-const { title } = Astro.props as Props;
+
+const { title, description } = Astro.props as Props;
+const titleTemplate = () => {
+  const siteName = "Lenyeg";
+  return title && title !== siteName ? `${title} - ${siteName}` : siteName;
+};
+console.log(Astro.url.pathname, Astro.site)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL("/images/banner-social.png", Astro.url);
 ---
 
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'; document.documentElement.classList.add('font-switzer')"
+    />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{titleTemplate()}</title>
+    <meta name="description" content={description} />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/x-icon" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<meta name="generator" content={Astro.generator} />
-	<title>{title}</title>
-</head>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={titleTemplate()} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
 
-<body>
-	<slot />
-</body>
+    <link rel="canonical" href={canonicalURL} />
 
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-W8EV6S29PF"
+    ></script>
+
+    <script is:inline>
+      const eventTime = () => Math.round(new Date().getTime() / 1000);
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-W8EV6S29PF", {
+        transport_url: "https://ss.lenyeg.com.br",
+        first_party_collection: true,
+        anonymize_ip: true,
+        send_page_view: true,
+        cookie_domain: "auto",
+        event_time: eventTime()
+      });
+    </script>
+  </head>
+  <body class="overflow-x-hidden">
+      <slot />
+  </body>
 </html>

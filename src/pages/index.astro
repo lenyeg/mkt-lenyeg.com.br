@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 
-import TheMenu from "../components/TheMenu.vue";
+import TheMenu from "@components/TheMenu.vue";
 import Icon from "astro-icon";
-import BaseContainer from "../components/BaseContainer.astro";
-import TheSelector from "../components/TheSelector.vue";
+import BaseContainer from "@components/BaseContainer.astro";
+import TheSelector from "@components/TheSelector.vue";
 ---
 
-<Layout title="Lenyeg">
+<Layout title="A escola que desenvolve pessoas e produtos digitais">
   <TheMenu client:only="vue" />
   <BaseContainer>
     <section class="flex flex-col gap-10 mb-16">
