@@ -9,7 +9,6 @@ const titleTemplate = () => {
   const siteName = "Lenyeg";
   return title && title !== siteName ? `${title} - ${siteName}` : siteName;
 };
-console.log(Astro.url.pathname, Astro.site)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL("/images/banner-social.png", Astro.url);
 ---
