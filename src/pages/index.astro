@@ -1,15 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
 
-import TheMenu from "@components/TheMenu.vue";
-import { Sprite } from "astro-icon";
+import TheMenu from "@components/TheMenu.astro";
+import { Icon } from "astro-iconset/components";
 import BaseContainer from "@components/BaseContainer.astro";
-import TheSelector from "@components/TheSelector.vue";
+import TheSelector from "@components/TheSelector.astro";
 ---
 
 <Layout title="A escola que desenvolve pessoas e produtos digitais">
-  <Sprite.Provider>
-  <TheMenu client="vue" />
+  <TheMenu />
   
   <BaseContainer>
     <section class="flex flex-col gap-10 mb-16">
@@ -40,8 +39,11 @@ import TheSelector from "@components/TheSelector.vue";
             alt="A equipe"
             class="block md:hidden"
           />
-          <a href="https://discord.gg/J6f68NQC" target="_blank" class="button"
-            >Junte-se a nós!</a
+          <button
+            type="button"
+            disabled
+            class="button opacity-50 cursor-not-allowed"
+            >Projeto encerrado em 2023</button
           >
         </section>
         <section
@@ -87,10 +89,11 @@ import TheSelector from "@components/TheSelector.vue";
             alt=""
             class="block md:hidden"
           />
-          <a
-            href="https://wa.me/554491441919?text=ol%C3%A1,%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20ser%20atendido"
-            target="_blank"
-            class="button">Comece agora</a
+          <button
+            type="button"
+            disabled
+            class="button opacity-50 cursor-not-allowed"
+            >Projeto encerrado em 2023</button
           >
         </section>
         <section class="hidden md:flex items-center justify-center flex-1">
@@ -134,16 +137,15 @@ import TheSelector from "@components/TheSelector.vue";
               />
             </div>
           </section>
-          <a
-            href="https://wa.me/554491441919?text=ol%C3%A1,%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20ser%20atendido"
-            target="_blank"
-            class="button"
+          <button
+            type="button"
+            disabled
+            class="button opacity-50 cursor-not-allowed"
           >
-            Fale conosco
-            <Sprite name="wpp" class="w-4 h-4 md:w-6 md:h-6" />
-          </a>
+            Projeto encerrado em 2023
+          </button>
         </section>
-        <TheSelector client:only="vue" />
+        <TheSelector />
       </section>
     </section>
   </BaseContainer>
@@ -164,16 +166,10 @@ import TheSelector from "@components/TheSelector.vue";
         </div>
         <div class="flex flex-col gap-3 lg:flex-row lg:gap-6">
           <a href="https://github.com/lenyeg/" target="_blank">
-            <Sprite
+            <Icon
               name="github"
-              size="32"
-              class="text-white hover:text-[#0D806E] duration-300"
-            />
-          </a>
-          <a href="https://discord.gg/TJ6gGWh68b" target="_blank">
-            <Sprite
-              name="discord"
-              size="32"
+              width={32}
+              height={32}
               class="text-white hover:text-[#0D806E] duration-300"
             />
           </a>
@@ -199,10 +195,11 @@ import TheSelector from "@components/TheSelector.vue";
       <p class="text-center lg:my-4 lg:mt-8">Feito com 💚 e ☕️ pela Lenyeg</p>
     </BaseContainer>
   </footer>
-  </Sprite.Provider>
 </Layout>
 
 <style>
+  @reference "tailwindcss";
+
   :root {
     scroll-behavior: smooth;
   }

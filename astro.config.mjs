@@ -1,15 +1,16 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
-import vue from "@astrojs/vue";
 import robotsTxt from 'astro-robots-txt';
+import icon from "astro-iconset";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lenyeg.com.br',
   // ...
-  integrations: [tailwind(), sitemap(), vue(), robotsTxt()],
+  integrations: [sitemap(), robotsTxt(), icon()],
   vite: {
+    plugins: [tailwindcss()],
     ssr: {
       external: ["svgo"],
     },

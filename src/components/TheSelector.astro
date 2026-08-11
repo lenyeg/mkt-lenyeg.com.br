@@ -1,0 +1,59 @@
+---
+const images = [
+  { src: "/images/pvai-app-portfolio.png", alt: "Paranavai.app" },
+  { src: "/images/osmarjr-portfolio.png", alt: "Osmar Junior LP" },
+  { src: "/images/ieasy-portfolio.png", alt: "Ieasy LP" },
+];
+---
+
+<section
+  id="portfolio-selector"
+  class="hidden md:flex flex-col gap-4 flex-1 p-2 mx-auto"
+>
+  <img
+    id="portfolio-selector-hero"
+    draggable="false"
+    src={images[0].src}
+    alt={images[0].alt}
+    width="620"
+    class="rounded"
+  />
+  <div class="flex justify-around items-center gap-2">
+    {
+      images.map((image, index) => (
+        <img
+          draggable="false"
+          src={image.src}
+          alt={image.alt}
+          data-index={index}
+          class="rounded flex-1 w-36 cursor-pointer"
+        />
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const images = [
+    { src: "/images/pvai-app-portfolio.png", alt: "Paranavai.app" },
+    { src: "/images/osmarjr-portfolio.png", alt: "Osmar Junior LP" },
+    { src: "/images/ieasy-portfolio.png", alt: "Ieasy LP" },
+  ];
+
+  const hero = document.getElementById(
+    "portfolio-selector-hero"
+  ) as HTMLImageElement | null;
+  const thumbnails = document.querySelectorAll<HTMLImageElement>(
+    "#portfolio-selector [data-index]"
+  );
+
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", () => {
+      const index = Number(thumbnail.dataset.index);
+      const image = images[index];
+      if (!hero || !image) return;
+      hero.src = image.src;
+      hero.alt = image.alt;
+    });
+  });
+</script>
